@@ -1,42 +1,41 @@
 <%- include('includes/head.ejs') %>
 <%- include('includes/navbar.ejs') %>
         
-      <div class="container">
-        <div class="row">
 
-            <%- include('includes/left_panel.ejs') %>
+    <div class="row rowHeight">
 
-          <div class="col-7 main_container"> <!-- MAIN -->
-            
-            <div class="main-content" id="main-content"></div>
+        <%- include('includes/left_panel.ejs') %>
 
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-            <script>
-                $(document).ready( () => {
-                    $('#home_link').click( () => {
-                        $('#main-content').html(`<%- include('home.ejs') %>`);
-                    });
+        <div class="col-7 main_container"> <!-- MAIN -->
+        
+        <div class="main-content" id="main-content"></div>
 
-                    $('#temp_link').click( () => {
-                        $('#main-content').html(`<%- include('name.ejs') %>`);
-                    });
-
-                    $('#add_activity_link').click( () => {
-                        $('#main-content').html(`<%- include('add-activity.ejs') %>`);
-                    });
-
-                    $('#add_meal_link').click( () => {
-                        $('#main-content').html(`<%- include('add-meal.ejs') %>`);
-                    });
-
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script>
+            $(document).ready( () => {
+                $('#home_link').click( () => {
+                    $('#main-content').html(`<%- include('home.ejs') %>`);
                 });
-            </script>                         
-              
-          </div>
 
-            <%- include('includes/right_panel.ejs') %>
+                $('#temp_link').click( () => {
+                    $('#main-content').html(`<%- include('name.ejs') %>`);
+                });
 
+                $('#add_activity_link').click( () => {
+                    $('#main-content').html(`<%- include('add-activity.ejs') %>`);
+                });
+
+                $('#add_meal_link').click( () => {
+                    $('#main-content').html(`<%- include('add-meal.ejs') %>`);
+                });
+
+            });
+        </script>                         
+            
         </div>
-      </div>
+
+        <%- include('includes/right_panel.ejs') %>
+
+    </div>
       
 <%- include('includes/end.ejs') %>
