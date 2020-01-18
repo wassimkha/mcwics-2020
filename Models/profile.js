@@ -37,6 +37,8 @@ module.exports = class Profile{
         this.activities.push(act)
     }
     addMeal(meal) {
+        console.log("meal added")
+        console.log(meal)
         this.meals.push(meal)
     }
 

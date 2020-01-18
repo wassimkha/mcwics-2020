@@ -9,6 +9,7 @@ const router = require('./Routes/route')
 const app = express();
 
 global.currentUser = "Isaac"
+global.currentCal = null;
 
 //set uo templating engine
 app.set('view engine','ejs'); // to let express know what templating engine we're using
