@@ -32,6 +32,7 @@ body {
     width: 100%;
     position: 30%;
     margin: auto;
+    margin-top: 30px;
     padding: auto;
     align-items: center;
     
@@ -39,4 +40,13 @@ body {
 
 .full_height {
     height: 100%;
+}
+
+.left-link-item-container {
+    padding: 3px;
+    margin: 3px;
+}
+
+.left-link-item {
+    font-size: larger;
 }

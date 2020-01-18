@@ -4,17 +4,9 @@
       <div class="container">
         <div class="row">
 
-          <div class="col-2 left-panel_container full-height"> <!-- LEFT PANEL -->
-            <div class="left_links_container">
-                <ul class="links">
-                    <li class="left_link-item" id="home_link">Home</li>
-                    <li class="left_link-item" id="add_activity_link">Add Activity</li>
-                    <li class="left_link-item" id="add_meal_link">Add Meal</li>
-                </ul>
-            </div>
-          </div>
+            <%- include('includes/left_panel.ejs') %>
 
-          <div class="col-8 main_container"> <!-- MAIN -->
+          <div class="col-7 main_container"> <!-- MAIN -->
             
             <div class="main-content" id="main-content"></div>
 
@@ -22,6 +14,10 @@
             <script>
                 $(document).ready( () => {
                     $('#home_link').click( () => {
+                        $('#main-content').html(`<%- include('home.ejs') %>`);
+                    });
+
+                    $('#temp_link').click( () => {
                         $('#main-content').html(`<%- include('name.ejs') %>`);
                     });
 
@@ -38,9 +34,7 @@
               
           </div>
 
-          <div class="col-2 right-panel_container"> <!-- LEFT PANEL -->
-            Three of three columns
-          </div>
+            <%- include('includes/right_panel.ejs') %>
 
         </div>
       </div>
