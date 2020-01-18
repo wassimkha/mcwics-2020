@@ -16,18 +16,6 @@
 </head>
 <body>
     
-    <!-- NAVBAR -->
-    <!-- <nav class="navbar navbar-dark bg-primary">
-        <a class="navbar-brand" href="#">App Name / Logo</a>
-
-        <ul class="nav">
-                <a class="nav-link nav-item active" href="#">Home</a>
-                <a class="nav-link nav-item active" href="#">Login</a>
-                <a class="nav-link nav-item active" href="#">Sign up</a>
-
-        </ul>
-
-    </nav> -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <a class="navbar-brand" href="#">Navbar</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -51,12 +39,14 @@
         </div>
       </nav>
 
-      <div class="container">
-        <div class="row">
-          <div class="col-2">
+      <div class="container full-height">
+        <div class="row full-height">
+
+          <div class="col-2 left-panel_container full-height"> <!-- LEFT PANEL -->
             One of three columns
           </div>
-          <div class="col-8">
+
+          <div class="col-8"> <!-- MAIN -->
             <form action="/home" method="POST">
                 <div class="form-group">
                   <label for="name">Please Enter Your Name:</label>
@@ -70,9 +60,12 @@
                 </div>
               </form>
           </div>
-          <div class="col-2">
-            One of three columns
+
+
+          <div class="col-2 right-panel_container"> <!-- LEFT PANEL -->
+            Three of three columns
           </div>
+
         </div>
       </div>
       
