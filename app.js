@@ -2,7 +2,7 @@
 const express = require('express');
 const bodyParser = require('body-parser'); // body parser
 const path = require('path');
-
+const router = require('./Routes/route')
 
 const app = express();
 
@@ -17,9 +17,9 @@ app.use(bodyParser.urlencoded({extended: false}));
 //set up body parser
 app.use(express.static(path.join(__dirname,'public'))); //allows the public folder to be accesible by other files (read)
 
-app.use('/', (req,res,next) => {
-    res.render("index");
-})
+
+
+app.use(router.routes);
 
 
 app.listen(3000);
