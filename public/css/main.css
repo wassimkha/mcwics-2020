@@ -1,12 +1,17 @@
 body {
-    height: 100%;
+    padding: 0;
+    margin: 0;
 }
-
 
 .left-panel_container {
     background-color: lightblue;
+    width: 100%;
 }
 
 .right-panel_container {
     background-color: lightblue;
+}
+
+.full_height {
+    height: 100%;
 }
