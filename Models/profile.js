@@ -10,6 +10,8 @@ module.exports = class Profile{
         this.age=age;
         this.PA=PA;
         this.gender=gender;
+        this.meals = []
+        this.activities = []
 
     }
 
@@ -29,6 +31,13 @@ module.exports = class Profile{
 
     static fetchAll() {
         return users;
+    }
+
+    addActivity(act) {
+        this.activities.push(act)
+    }
+    addMeal(meal) {
+        this.meals.push(meal)
     }
 
     
