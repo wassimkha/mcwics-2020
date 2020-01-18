@@ -4,7 +4,7 @@ const Activity = require('../Models/activity');
 const crawler = require('../Crawling/crawler')
 
 exports.index = (req,res,next) => {
-    res.render("index");
+    res.render("index", {name: currentUser});
 }
 
 
