@@ -5,7 +5,7 @@ const router = express.Router();
 
 router.get('/', controller.index)
 
-// router.get('/add-meal', controller.addMeal)
+router.post('/home', controller.postHome)
 
 
 

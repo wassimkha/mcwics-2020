@@ -5,6 +5,9 @@ exports.index = (req,res,next) => {
     res.render("index");
 }
 
-exports.addMeal = (req,res,next) => {
-    res.render("test.ejs");
+
+exports.postHome = (req,res,next) => {
+    console.log(req.body.name);
+    res.redirect('/');
+
 }
