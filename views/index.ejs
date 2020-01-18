@@ -34,6 +34,18 @@
                     $('#main-content').html(`<%- include('check-in.ejs') %>`);
                 });
 
+                $('#restaurants_link').click( () => {
+                    $('#main-content').html(`<%- include('restaurants.ejs') %>`);
+                });
+
+                $('#mcgill_resources_link').click( () => {
+                    $('#main-content').html(`<%- include('mcgill_resources.ejs') %>`);
+                });
+
+                $('#health_canada_link').click( () => {
+                    $('#main-content').html(`<%- include('health_canada.ejs') %>`);
+                });
+
 
 
             });
