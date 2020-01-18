@@ -37,10 +37,44 @@
         <div class="row">
 
           <div class="col-2 left-panel_container full-height"> <!-- LEFT PANEL -->
-            One of three columns
+            <div class="left_links_container">
+                <ul class="links">
+                    <li class="left_link-item" id="home_link">Home</li>
+                    <li class="left_link-item" id="add_activity_link">Add Activity</li>
+                    <li class="left_link-item" id="add_meal_link">Add Meal</li>
+                </ul>
+            </div>
           </div>
 
           <div class="col-8 main_container"> <!-- MAIN -->
+            
+            <div class="main-content">
+
+
+
+
+
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+                <script>
+                    $(document).ready( () => {
+                        console.log("TEST")
+                    // $('#main__link').click( () => {
+                    //     // console.log("TEST!")
+                    //     $.ajax({
+                    //     url: 'users',
+                    //     type: 'GET',
+                    //     dataType: 'html',
+                    //     success: (data) => {
+                    //         // console.log('Data Received', data);
+                    //         $('#HTMLHERE').html(data)
+                    //     }
+
+                    //     });
+                    // });
+                    });
+                </script>
+            </div>
+
             <form action="/home" method="POST">
                 <div class="form-group">
                   <label for="name">Please Enter Your Name:</label>
