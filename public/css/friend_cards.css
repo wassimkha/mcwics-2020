@@ -1,3 +1,27 @@
 .friend_card {
-    margin: 5px 2px 2px 2px;
+    margin: 5px 15px 2px 2px;
+}
+
+.row_username-pic {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: center;
+}
+
+.user_profile-pic {
+    height: 32px;
+    border: 1px solid black;
+    border-radius: 100%;
+    margin: 2px;
+}
+
+.user_profile-name {
+    font-size: 16px;
+    padding-top: 7px;
+    padding-left: 2px;
+}
+
+.user_profile-latest {
+    text-align: center;
 }
