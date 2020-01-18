@@ -48,69 +48,27 @@
 
           <div class="col-8 main_container"> <!-- MAIN -->
             
-            <div class="main-content">
+            <div class="main-content" id="main-content"></div>
 
-
-
-
-
-                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-                <script>
-                    $(document).ready( () => {
-                        console.log("TEST")
-                    // $('#main__link').click( () => {
-                    //     // console.log("TEST!")
-                    //     $.ajax({
-                    //     url: 'users',
-                    //     type: 'GET',
-                    //     dataType: 'html',
-                    //     success: (data) => {
-                    //         // console.log('Data Received', data);
-                    //         $('#HTMLHERE').html(data)
-                    //     }
-
-                    //     });
-                    // });
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+            <script>
+                $(document).ready( () => {
+                    $('#home_link').click( () => {
+                        $('#main-content').html(`<%- include('name.ejs') %>`);
                     });
-                </script>
-            </div>
 
-            <form action="/home" method="POST">
-                <div class="form-group">
-                  <label for="name">Please Enter Your Name:</label>
-                  <div class="input-group">
-                    <input type="text" class="form-control" name="name" id="name" placeholder="Enter name">
-                    <div class="input-group-append">
-                      <button class="btn btn-outline-primary" type="submit">Submit</button>
-                    </div>
-                  </div>
-                  
-                </div>
-              </form>
-              <form action="/home" method="POST">
-                <div class="form-group">
-                  <label for="name">Please Enter Your Activity:</label>
-                  <div class="input-group">
-                    <input type="text" class="form-control" name="activity" id="activity" placeholder="Enter activity">
-                    <div class="input-group-append">
-                      <button class="btn btn-outline-primary" type="submit">Submit</button>
-                    </div>
-                  </div>
-                  
-                </div>
-              </form>
-              <form action="/home" method="POST">
-                <div class="form-group">
-                  <label for="name">Please Enter Your Meal:</label>
-                  <div class="input-group">
-                    <input type="text" class="form-control" name="meal" id="meal" placeholder="Enter name">
-                    <div class="input-group-append">
-                      <button class="btn btn-outline-primary" type="submit">Submit</button>
-                    </div>
-                  </div>
-                  
-                </div>
-              </form>
+                    $('#add_activity_link').click( () => {
+                        $('#main-content').html(`<%- include('add-activity.ejs') %>`);
+                    });
+
+                    $('#add_meal_link').click( () => {
+                        $('#main-content').html(`<%- include('add-meal.ejs') %>`);
+                    });
+
+                });
+            </script>
+
+                          
               
           </div>
 
