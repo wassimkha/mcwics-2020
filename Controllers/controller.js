@@ -1,4 +1,6 @@
 const Profile = require('../Models/profile');
+const Meal = require('../Models/meal');
+const Activity = require('../Models/activity');
 
 
 exports.index = (req,res,next) => {
@@ -7,9 +9,9 @@ exports.index = (req,res,next) => {
 
 
 exports.postHome = (req,res,next) => {
-    name = req.body.name;
-    activity = req.body.activity;
-    meal = req.body.meal;
+    const name = req.body.name;
+    activity = new Activity(req.body.activity,1,1);
+    meal = new Meal(req.body.meal,1,1,1,1);
     
     const users = Profile.fetchAll()
 
@@ -18,19 +20,27 @@ exports.postHome = (req,res,next) => {
         user.save()
     }
 
-    if (activity) {
+    if (activity.name) {
         users.forEach(user => {
-            user.addActivity(activity)
+            if (user.name === currentUser) {
+                user.addActivity(activity)
+            }
+           
+  
         })
     }
 
-    if (meal) {
+    if (meal.name) {
         users.forEach(user => {
-            user.addMeal(meal)
+            if (user.name === currentUser) {
+                user.addMeal(meal)
+            }
+
         })
     }
 
     console.log(users)
+    console.log(currentUser)
 
     res.redirect('/');
 

@@ -4,7 +4,11 @@ const bodyParser = require('body-parser'); // body parser
 const path = require('path');
 const router = require('./Routes/route')
 
+
+
 const app = express();
+
+global.currentUser = "Isaac"
 
 //set uo templating engine
 app.set('view engine','ejs'); // to let express know what templating engine we're using
@@ -16,6 +20,10 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 //set up body parser
 app.use(express.static(path.join(__dirname,'public'))); // CSS
+
+
+
+
 
 
 
