@@ -5,7 +5,7 @@
 function executeRank(UserId){
 
 
-    //retrive food/exercise data from User profile
+    //Todo: retrive food/exercise data from User profile
     let recommandedFat = 0;
     let recommandedCarbon = 0;
     let recommandedProtein = 0;
@@ -20,18 +20,25 @@ function executeRank(UserId){
     
     let foodScore = calculateFoodScore(recommandedFat,recommandedCarbon,recommandedProtein,fat,carbon,protein);
     let exerciseScore = calculateExerciseScore(recommandedAerobic,recommandedAnaerobic,Aerobic,Anaerobic);
-    let overallScore = calculateOverallScore(foodScore,exerciseScore);
+    //now, compute foodScore rank and exerciseScore rank, take the average of those two and rank again as the final rank.
 
+    let foodRank = getFoodRank(UserId, foodScore);
+    let exerciseRank = getExerciseRank(UserId,exerciseScore);
 
-    //returning overallsocre, not the rank
+    let averageRank = parseInt((foodRank+exerciseRank)/2);
 
-    return overallScore;
+    
+
+//Todo: The averageRank may not be accurate, since two people may have the same rank, to change this, sort AverageRank again.
+    
+
+    return averageRank;
     
 }
 
 function calculateFoodScore(recommandedFat,recommandedCarbon,recommandedProtein,fat,carbon,protein){
           
-          //Todo: cal foodRank
+          
           let foodScore_variance = ((recommandedFat-fat)*(recommandedFat-fat)+(recommandedProtein-protein)*(recommandedProtein-protein)+(recommandedCarbon-carbon)*(recommandedCarbon-carbon))/3;
           return foodScore_variance;
     
@@ -39,13 +46,23 @@ function calculateFoodScore(recommandedFat,recommandedCarbon,recommandedProtein,
 
 function calculateExerciseScore(recommandedAerobic,recommandedAnaerobic,Aerobic,Anaerobic){
           
-//Todo cal exerciserank
+
           let exerciseScore =((recommandedAnaerobic-Aerobic)*(recommandedAnaerobic-Aerobic)+(recommandedAerobic-Anaerobic)*(recommandedAerobic-Anaerobic))/2;
           return exerciseScore;
 }
 
-function calculateOverallScore(foodScore,exerciseScore){
 
+
+function getFoodRank(){
+//Todo: see below
+
+   return FoodRank;
+}
+
+function getExerciseRank(){
+    //Todo : input ranking score and id, refresh database, from the database, we derive all the food/exercuse ranking/id, rerank all of them and return the rank
+
+    return exerciseRank;
 }
 
 function getRank(){
