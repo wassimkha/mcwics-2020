@@ -1,10 +1,15 @@
 const Profile = require('../Models/profile');
 const Meal = require('../Models/meal');
 const Activity = require('../Models/activity');
-
+const crawler = require('../Crawling/crawler')
 
 exports.index = (req,res,next) => {
     res.render("index");
+}
+
+
+exports.getLogin = (req,res,next) => {
+    res.render("login");
 }
 
 
@@ -25,22 +30,40 @@ exports.postHome = (req,res,next) => {
             if (user.name === currentUser) {
                 user.addActivity(activity)
             }
-           
-  
         })
     }
 
     if (meal.name) {
-        users.forEach(user => {
-            if (user.name === currentUser) {
-                user.addMeal(meal)
+        
+        
+        crawler.getCaloriesPerMeal(meal.name, (calories,carbs,protein,fat) => {
+            // console.log(calories)
+            
+            meal.calories = calories;
+            meal.carbs = carbs;
+            meal.protein = protein;
+            meal.fat = fat;
+            users.forEach(user => {
+                if (user.name === currentUser) {
+                    console.log(user.name)
+                    
+                    user.addMeal(meal)
             }
+            console.log(users)
+            })
 
         })
+       
+        
+        
+        
+            
+        
+        
+        
     }
 
-    console.log(users)
-    console.log(currentUser)
+   
 
     res.redirect('/');
 

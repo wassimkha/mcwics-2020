@@ -3,9 +3,11 @@ const path = require('path');
 const controller = require('../Controllers/controller')
 const router = express.Router();
 
+router.post('/home', controller.postHome)
+router.get('/login', controller.getLogin)
+
 router.get('/', controller.index)
 
-router.post('/home', controller.postHome)
 
 
 
