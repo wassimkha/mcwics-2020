@@ -30,11 +30,11 @@ body {
 
 .main_container {
     width: 100%;
-    position: 30%;
+    position: absolute;
     margin: auto;
     margin-top: 30px;
     padding: auto;
-    align-items: center;
+    left: 220px;
     
 }
 
