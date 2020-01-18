@@ -8,7 +8,7 @@ const router = require('./Routes/route')
 
 const app = express();
 
-global.currentUser = "Isaac"
+global.currentUser = "Ryan"
 global.currentCal = null;
 
 //set uo templating engine
