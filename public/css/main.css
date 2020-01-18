@@ -48,16 +48,6 @@ body, html {
     
 }
 
-.left-link-item-container {
-    padding: 3px;
-    margin: 3px;
-}
-
-.left-link-item {
-    font-size: larger;
-}
-
-
 ::-webkit-scrollbar {
     width: 10px;
   }
