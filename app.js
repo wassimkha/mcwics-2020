@@ -15,7 +15,7 @@ app.set('views', 'views'); //where to find the templates
 app.use(bodyParser.urlencoded({extended: false}));
 
 //set up body parser
-app.use(express.static(path.join(__dirname,'public'))); //allows the public folder to be accesible by other files (read)
+app.use(express.static(path.join(__dirname,'public'))); // CSS
 
 
 
