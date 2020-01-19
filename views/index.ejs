@@ -13,10 +13,18 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script>
             $(document).ready( () => {
+
+                $('#main-content').html(`<%- include('home.ejs') %>`);
+                $('.left-link-item-container').removeClass('active-left-link');
+                $('#home_link_container').addClass('active-left-link');  
+
+
                 $('#home_link').click( () => {
                     $('#main-content').html(`<%- include('home.ejs') %>`);
                     $('.left-link-item-container').removeClass('active-left-link');
-                    $('#home_link_container').addClass('active-left-link');                    
+                    $('#home_link_container').addClass('active-left-link');
+                    chart1();
+                    chart2();                    
                 });
 
                 $('#friend_link').click( () => {
@@ -61,7 +69,7 @@
                     $('#health_link_container').addClass('active-left-link');
                 });
 
-                $('#chart_link').click( () => {
+                    const chart1 = () => {
                     var data = [{
                     values: ["<%- percentFood[2] %>", "<%- percentFood[1] %>", "<%- percentFood[0] %>"] ,
                     labels: ['Carbohydrates', 'Lipids', 'Proteins'],
@@ -82,10 +90,12 @@
                                
                     
                     Plotly.newPlot('foodPercentChart', data, layout);
-                });
+                };
+
+                    
 
 
-                $('#chart_link2').click( () => {
+                const chart2 = () => {
                     var trace1 = {
                     x: ["MON", "TUE", "WED", "THUR", "FRI", "SAT", "SUN"],
                     y: [10, 15, 13, 17, 20, 21, 50],
@@ -116,7 +126,10 @@
                     };
 
                     Plotly.newPlot('weeklyChart', data, layout);
-                });
+                };
+
+                setTimeout(chart1(), 10);
+                setTimeout(chart2(), 10);
 
             });
         </script>                   
