@@ -43,10 +43,10 @@
                     $('#meal_link_container').addClass('active-left-link');
                 });
 
-                $('#check_in_link').click( () => {
-                    $('#main-content').html(`<%- include('check-in.ejs') %>`);
+                $('#profile_link').click( () => {
+                    $('#main-content').html(`<%- include('my-profile.ejs') %>`);
                     $('.left-link-item-container').removeClass('active-left-link');
-                    $('#checkin_link_container').addClass('active-left-link');
+                    $('#profile_container').addClass('active-left-link');
                 });
 
                 $('#restaurants_link').click( () => {
