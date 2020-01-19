@@ -14,6 +14,7 @@ module.exports = class Profile{
         this.activities = []
         this.friends = []
 
+        this.rank = 0;
         
 
     }
