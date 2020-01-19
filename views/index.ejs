@@ -18,13 +18,11 @@
                 $('.left-link-item-container').removeClass('active-left-link');
                 $('#home_link_container').addClass('active-left-link');  
 
-
                 $('#home_link').click( () => {
                     $('#main-content').html(`<%- include('home.ejs') %>`);
                     $('.left-link-item-container').removeClass('active-left-link');
                     $('#home_link_container').addClass('active-left-link');
-                    chart1();
-                    chart2();                    
+                    reloadPage();                  
                 });
 
                 $('#friend_link').click( () => {
@@ -68,6 +66,10 @@
                     $('.left-link-item-container').removeClass('active-left-link');
                     $('#health_link_container').addClass('active-left-link');
                 });
+
+                function reloadPage(){
+                    location.reload(true);
+                }
 
                     const chart1 = () => {
                     var data = [{
