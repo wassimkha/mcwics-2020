@@ -42,9 +42,13 @@ exports.index = (req,res,next) => {
         } else {
             let totalCal = null;
             if (currentUs.weight != 1) {
-                
+                console.log("args");
+                console.log(currentUs.calcDailyCalories())
                 res.render("index",{name: currentUser,users: currentUs.friends,percentFood: currentUs.foodPercentage(),dailyCal: currentUs.calcDailyCalories()});
+
             } else {
+                console.log("args");
+                console.log("2000")
                 res.render("index",{name: currentUser,users: currentUs.friends,percentFood: currentUs.foodPercentage(),dailyCal: "2000"});
             }
             
