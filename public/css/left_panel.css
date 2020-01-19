@@ -15,8 +15,10 @@
 }
 
 .active-left-link {
-    border: 0.5px solid black;
-    border-radius: 16px;
-    background-color: darkgreen;
-    color: white;
+    /* border: 0.5px solid black; */
+    /* border-radius: 16px; */
+    /* background-color: darkgreen; */
+    /* color: white; */
+    font-weight: bold;
+    color: darkgreen;
 }
