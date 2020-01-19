@@ -3,12 +3,13 @@ const express = require('express');
 const bodyParser = require('body-parser'); // body parser
 const path = require('path');
 const router = require('./Routes/route')
-
+const rout_login = require('./Routes/login_route')
 
 
 const app = express();
 
-global.currentUser = "Ryan";
+global.currentUser = "";
+
 
 
 
@@ -24,11 +25,12 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.static(path.join(__dirname,'public'))); // CSS
 
 
-// if (!currentUser) {
-//     app.use('/', (req,res,next) => {
-//         res.redirect('/login')
-//     })
-// }
+
+if (!currentUser) {
+    console.log("No user")
+    // app.use(rout_login.routes);
+    
+}
 
 
 
