@@ -48,9 +48,18 @@ module.exports = class Profile{
  
         this.meals.push(meal)
     }
-
-    setRank(ranking){
-        this.rank = ranking;
+    foodPercentage() {
+        const meals = this.meals;
+        let protein = 0;
+        let fat = 0;
+        let carbs = 0;
+        meals.forEach(meal => {
+            protein += meal.protein;
+            fat += meal.fat;
+            carbs += meal.carbs 
+        })
+        const sum = protein+fat+carbs;
+        return [protein/sum,fat/sum,carbs/sum];
     }
 
 
