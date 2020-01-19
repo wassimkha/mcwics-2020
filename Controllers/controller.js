@@ -33,10 +33,11 @@ exports.index = (req,res,next) => {
                 currentUs = user;
             }
         })
+
         if (!currentUs) {
-            res.render("index", {name: currentUser, users: []});
+            res.render("index", {name: currentUser, users: [], percentFood: []});
         } else {
-            res.render("index",{name: currentUser,users: currentUs.friends});
+            res.render("index",{name: currentUser,users: currentUs.friends,percentFood: currentUs.foodPercentage()});
         }
         // console.log(currentUs)
     }
@@ -51,7 +52,18 @@ exports.getLogin = (req,res,next) => {
 exports.postLogin = (req,res,next) => {
     
     currentUser = req.body.name;
-
+    const users = Profile.fetchAll();
+    let exist = false;
+    users.forEach(user => {
+        if (user.name === currentUser) {
+            exist = true;
+        }
+    })
+    if (exist == false ) {
+        const user = new Profile(currentUser,1,1,1,1,1);
+        user.save()
+    }
+    
     res.redirect('/');
 }
 
@@ -80,12 +92,26 @@ exports.postHome = (req,res,next) => {
             var randomnumber_to10 = Math.floor(Math.random() * (10+ 1));
             const currentFriend = new Friend(name,randomAct[randomnumber],urlList[randomnumber_to10],randomnumber_to10);
             currentUs.addFriend(currentFriend)
-            console.log(currentUs)
+
+            const currentFriendUser = new Profile(name,1,1,1,1,1)
+
+            const currentFriendUserFriend = new Friend(currentUs.name,randomAct[randomnumber],urlList[randomnumber_to10],randomnumber_to10)
+            currentFriendUser.addFriend(currentFriendUserFriend)
+            currentFriendUser.save()
+          
+            // const user = new Profile(name,1,1,1,1,1);
+        
+            // user.save()
+        } else {
+            const user = new Profile(name,1,1,1,1,1);
+        
+            user.save()
         }
 
 
-        const user = new Profile(name,1,1,1,1,1);
-        user.save()
+        
+        console.log("next")
+        console.log(users);
     }
 
     if (activity.name) {
@@ -123,6 +149,7 @@ exports.postHome = (req,res,next) => {
                     // console.log(user.name)
                     
                     user.addMeal(meal)
+                    console.log(user.foodPercentage())
             }
             // console.log(users)
             })
