@@ -172,7 +172,7 @@ exports.postHome = (req,res,next) => {
     
    
 
-    res.redirect('/middleware');
+    res.redirect('/');
     
 
 }
