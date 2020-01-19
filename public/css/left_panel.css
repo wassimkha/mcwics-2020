@@ -1,0 +1,22 @@
+.left-link-item-container {
+    padding: 5px;
+    margin: 5px;
+}
+
+.left-link-item{
+    font-size: 18px;
+    list-style-type: none;
+}
+
+.left-link-item:hover {
+    color: green;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.active-left-link {
+    border: 0.5px solid black;
+    border-radius: 16px;
+    background-color: darkgreen;
+    color: white;
+}
