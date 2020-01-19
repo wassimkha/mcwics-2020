@@ -2,10 +2,29 @@ const Profile = require('../Models/profile');
 const Meal = require('../Models/meal');
 const Activity = require('../Models/activity');
 const crawler = require('../Crawling/crawler')
-
+const Friend = require('../Models/friends')
 
 exports.index = (req,res,next) => {
-    res.render("index", {name: currentUser});
+    // currentUser
+    const users = Profile.fetchAll()
+    let currentUs = null;
+    const friendsArray = [];
+    const randomAct = ['Ate a burger', 'Went Swimming', "Went to a cafe","Went hinking"];
+    
+    users.forEach(user => {
+        if (user.name != currentUser) {
+            var randomnumber = Math.floor(Math.random() * (3+ 1));
+            const currentFriend = new Friend(user.name,randomAct[randomnumber]);
+            friendsArray.push(currentFriend);
+            
+        }
+    })
+    console.log(friendsArray)
+    
+
+    
+    
+    res.render("index", {name: currentUser, users: friendsArray});
 }
 
 
@@ -67,11 +86,11 @@ exports.postHome = (req,res,next) => {
             meal.fat = fat;
             users.forEach(user => {
                 if (user.name === currentUser) {
-                    console.log(user.name)
+                    // console.log(user.name)
                     
                     user.addMeal(meal)
             }
-            console.log(users)
+            // console.log(users)
             })
 
         })
