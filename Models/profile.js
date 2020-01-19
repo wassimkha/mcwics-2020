@@ -12,6 +12,7 @@ module.exports = class Profile{
         this.gender=gender;
         this.meals = []
         this.activities = []
+        this.friends = []
 
     }
 
@@ -27,6 +28,10 @@ module.exports = class Profile{
 
     save() {
         users.push(this);
+    }
+
+    addFriend(fr) {
+        this.friends.push(fr)
     }
 
     static fetchAll() {
