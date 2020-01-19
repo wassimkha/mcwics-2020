@@ -34,7 +34,6 @@ if (!currentUser) {
 
 
 
-
 app.use(router.routes);
 
 exports.currentUser = currentUser;

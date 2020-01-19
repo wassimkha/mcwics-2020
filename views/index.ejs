@@ -61,10 +61,27 @@
                     $('#health_link_container').addClass('active-left-link');
                 });
 
+                $('#chart_link').click( () => {
+                var data = [{
+                values: ["<%- percentFood[2] %>", "<%- percentFood[1] %>", "<%- percentFood[0] %>"] ,
+                labels: ['Carbohydrates', 'Lipids', 'Proteins'],
+                type: 'pie'
+                }];
+
+                var layout = {
+                height: 400,
+                width: 500
+                };
+                
+
+                Plotly.newPlot('myDiv', data, layout);
+                });
+
 
 
             });
-        </script>                         
+        </script>   
+        <!-- <h1><%= percentFood[0] %></h1>                       -->
             
         </div>
 
