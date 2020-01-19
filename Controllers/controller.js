@@ -188,3 +188,27 @@ exports.postActivity = (req,res,next) => {
 
     res.redirect(request.get('referer'));
 }
+
+exports.getSetup = (req,res,next) => {
+    const weight = req.body.weight;
+    const height = req.body.height;
+    const age = req.body.age;
+    const pa = req.body.pa; 
+
+    console.log(currentUser);
+
+    const users = Profile.fetchAll()
+
+    users.forEach(user => {
+        if (user.name === currentUser) {
+            user.weight = weight;
+            user.height = height;
+            user.age = age;
+            user.pa = pa;
+            console.log(user)
+        }
+    })
+
+    res.redirect('/');
+
+}
