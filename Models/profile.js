@@ -50,6 +50,7 @@ module.exports = class Profile{
     }
     foodPercentage() {
         const meals = this.meals;
+        const activities = this.activities;
         let protein = 0;
         let fat = 0;
         let carbs = 0;
@@ -58,9 +59,17 @@ module.exports = class Profile{
             protein += meal.protein;
             fat += meal.fat;
             carbs += meal.carbs;
-            calories += meal.calories; 
+            calories += (meal.calories*1.5); 
         })
+        activities.forEach(act => {
+            
+            calories = calories-act.caloriesBurned;
+        })
+
         const sum = protein+fat+carbs;
+        if (calories < 0) {
+            calories = 0;
+        }
         return [protein/sum,fat/sum,carbs/sum,calories];
     }
 
