@@ -33,11 +33,20 @@ exports.index = (req,res,next) => {
                 currentUs = user;
             }
         })
+        
+
+        
 
         if (!currentUs) {
             res.render("index", {name: currentUser, users: [], percentFood: []});
         } else {
-            res.render("index",{name: currentUser,users: currentUs.friends,percentFood: currentUs.foodPercentage()});
+            let totalCal = null;
+            if (currentUs.genre) {
+                res.render("index",{name: currentUser,users: currentUs.friends,percentFood: currentUs.foodPercentage(),dailyCal: currentUs.calcDailyCalories});
+            } else {
+                res.render("index",{name: currentUser,users: currentUs.friends,percentFood: currentUs.foodPercentage(),dailyCal: "2000"});
+            }
+            
         }
         // console.log(currentUs)
     }
@@ -158,19 +167,11 @@ exports.postHome = (req,res,next) => {
             
 
         })
-       
-        
-        
-        
-            
-        
-        
+
         
     }
 
-    
-    
-   
+
     setTimeout(() => {
         res.redirect('/');
     },1000)
@@ -194,8 +195,9 @@ exports.getSetup = (req,res,next) => {
     const height = req.body.height;
     const age = req.body.age;
     const pa = req.body.pa; 
+    const gender = req.body.gender;
 
-    console.log(currentUser);
+
 
     const users = Profile.fetchAll()
 
@@ -205,7 +207,8 @@ exports.getSetup = (req,res,next) => {
             user.height = height;
             user.age = age;
             user.pa = pa;
-            console.log(user)
+            user.gender = gender;
+            console.log(user.calcDailyCalories())
         }
     })
 

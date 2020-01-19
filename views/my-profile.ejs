@@ -5,10 +5,17 @@
     <div class="form-group">
       <label for="name">Please Enter Information About Your Profile:</label>
       <div class="input-group">
-        <input type="number" class="form-control" name="weight" id="weight" placeholder="Enter weight (kg)">
-        <input type="number" class="form-control" name="height" id="height" placeholder="Enter height (m)">
+        <input type="number" class="form-control" name="weight" id="weight" placeholder="Enter weight (kg)"step="0.01">
+        <input type="number" class="form-control" name="height" id="height" placeholder="Enter height (m)" step="0.01">
         <input type="number" class="form-control" name="age" id="age" placeholder="Enter age">
-        <input type="number" class="form-control" name="pa" id="pa" placeholder="Enter PA">
+        <select class="gender" id="gender" name="gender">
+          <option selected>Gender</option>
+          <option value="1">Male</option>
+          <option value="2">Female</option>
+          <option value="3">Other</option>
+
+        </select>
+        <input type="number" class="form-control" name="pa" id="pa" placeholder="Enter PA" step="0.01">
         <div class="input-group-append">
           <button id="add_meal_button" class="btn btn-outline-primary" type="submit">Submit</button>
         </div>
