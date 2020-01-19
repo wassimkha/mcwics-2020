@@ -1,8 +1,8 @@
-const users = []
+const users = [];
 
 module.exports = class Profile{
 
-
+    
     constructor(name,height,weight,age,PA,gender){
         this.name = name
         this.height=height;
@@ -13,6 +13,8 @@ module.exports = class Profile{
         this.meals = []
         this.activities = []
         this.friends = []
+
+        this.rank ;
 
     }
 
@@ -47,8 +49,13 @@ module.exports = class Profile{
         this.meals.push(meal)
     }
 
+    setRank(ranking){
+        this.rank = ranking;
+    }
     
 
 }
+
+
 
 
