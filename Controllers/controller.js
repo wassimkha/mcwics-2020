@@ -1,7 +1,7 @@
 const Profile = require('../Models/profile');
 const Meal = require('../Models/meal');
 const Activity = require('../Models/activity');
-const crawler = require('../Crawling/crawler')
+const crawler = require('../Crawling/crawler');
 
 
 exports.index = (req,res,next) => {
