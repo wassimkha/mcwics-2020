@@ -53,13 +53,15 @@ module.exports = class Profile{
         let protein = 0;
         let fat = 0;
         let carbs = 0;
+        let calories = 0;
         meals.forEach(meal => {
             protein += meal.protein;
             fat += meal.fat;
-            carbs += meal.carbs 
+            carbs += meal.carbs;
+            calories += meal.calories; 
         })
         const sum = protein+fat+carbs;
-        return [protein/sum,fat/sum,carbs/sum];
+        return [protein/sum,fat/sum,carbs/sum,calories];
     }
 
 

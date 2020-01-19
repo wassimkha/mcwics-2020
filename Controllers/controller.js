@@ -45,9 +45,11 @@ exports.index = (req,res,next) => {
 
 
 exports.getLogin = (req,res,next) => {
-
+    
     res.render("login");
 }
+
+
 
 exports.postLogin = (req,res,next) => {
     
@@ -153,6 +155,7 @@ exports.postHome = (req,res,next) => {
             }
             // console.log(users)
             })
+            
 
         })
        
@@ -169,7 +172,8 @@ exports.postHome = (req,res,next) => {
     
    
 
-    res.redirect('/');
+    res.redirect('/middleware');
+    
 
 }
 
@@ -180,5 +184,5 @@ exports.postActivity = (req,res,next) => {
     
     
 
-    res.redirect('/');
+    res.redirect(request.get('referer'));
 }
