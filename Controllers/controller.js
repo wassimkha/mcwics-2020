@@ -38,7 +38,7 @@ exports.index = (req,res,next) => {
         
 
         if (!currentUs) {
-            res.render("index", {name: currentUser, users: [], percentFood: []});
+            res.render("index", {name: currentUser, users: [], percentFood: [33,33,33]});
         } else {
             let totalCal = null;
             if (currentUs.weight != 1) {

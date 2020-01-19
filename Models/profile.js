@@ -70,6 +70,9 @@ module.exports = class Profile{
         if (calories < 0) {
             calories = 0;
         }
+        if (protein == 0 && fat == 0 && carbs == 0) {
+            return [33,33,33,calories];
+        }
         return [protein/sum,fat/sum,carbs/sum,calories];
     }
 
