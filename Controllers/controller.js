@@ -103,12 +103,12 @@ exports.postHome = (req,res,next) => {
         
         
     }
-    const users = Profile.fetchAll()
+    const usersAll = Profile.fetchAll()
     let currentUs = null;
     const friendsArray = [];
     const randomAct = ['Ate a burger', 'Went Swimming', "Went to a cafe","Went hinking"];
     
-    users.forEach(user => {
+    usersAll.forEach(user => {
         if (user.name != currentUser) {
             var randomnumber = Math.floor(Math.random() * (3+ 1));
             const currentFriend = new Friend(user.name,randomAct[randomnumber]);
