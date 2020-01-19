@@ -15,13 +15,14 @@
             $(document).ready( () => {
                 $('#home_link').click( () => {
                     $('#main-content').html(`<%- include('home.ejs') %>`);
-                    
+                    $('.left-link-item-container').removeClass('active-left-link');
+                    $('#home_link_container').addClass('active-left-link');                    
                 });
 
-                $('#temp_link').click( () => {
+                $('#friend_link').click( () => {
                     $('#main-content').html(`<%- include('name.ejs') %>`);
                     $('.left-link-item-container').removeClass('active-left-link');
-                    $('#temp_link_container').addClass('active-left-link');
+                    $('#friend_link_container').addClass('active-left-link');
                 });
 
                 $('#add_activity_link').click( () => {
