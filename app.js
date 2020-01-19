@@ -8,8 +8,9 @@ const router = require('./Routes/route')
 
 const app = express();
 
-global.currentUser = "Ryan"
-global.currentCal = null;
+global.currentUser = "Ryan";
+
+
 
 //set uo templating engine
 app.set('view engine','ejs'); // to let express know what templating engine we're using
@@ -23,12 +24,16 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.static(path.join(__dirname,'public'))); // CSS
 
 
-
+// if (!currentUser) {
+//     app.use('/', (req,res,next) => {
+//         res.redirect('/login')
+//     })
+// }
 
 
 
 
 app.use(router.routes);
 
-
+exports.currentUser = currentUser;
 app.listen(3000);

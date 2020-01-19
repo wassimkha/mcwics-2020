@@ -1,9 +1,8 @@
 module.exports = class Activity{
 
-    constructor(name,intensity,time) {
+    constructor(name,caloriesBurned) {
         this.name = name;
-        this.intensity = intensity;
-        this.time = time;
+        this.caloriesBurned = caloriesBurned;
 
     }
 }
