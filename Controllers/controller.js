@@ -34,15 +34,16 @@ exports.index = (req,res,next) => {
             }
         })
         
-
+        console.log(currentUs)
         
 
         if (!currentUs) {
             res.render("index", {name: currentUser, users: [], percentFood: []});
         } else {
             let totalCal = null;
-            if (currentUs.genre) {
-                res.render("index",{name: currentUser,users: currentUs.friends,percentFood: currentUs.foodPercentage(),dailyCal: currentUs.calcDailyCalories});
+            if (currentUs.weight != 1) {
+                
+                res.render("index",{name: currentUser,users: currentUs.friends,percentFood: currentUs.foodPercentage(),dailyCal: currentUs.calcDailyCalories()});
             } else {
                 res.render("index",{name: currentUser,users: currentUs.friends,percentFood: currentUs.foodPercentage(),dailyCal: "2000"});
             }
@@ -206,7 +207,7 @@ exports.getSetup = (req,res,next) => {
             user.weight = weight;
             user.height = height;
             user.age = age;
-            user.pa = pa;
+            user.PA = pa;
             user.gender = gender;
             console.log(user.calcDailyCalories())
         }
