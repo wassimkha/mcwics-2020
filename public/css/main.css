@@ -66,3 +66,7 @@ body, html {
   ::-webkit-scrollbar-thumb:hover {
     background: #555;
   }
+
+  #nav-logo {
+    height: 42px;
+  }

@@ -26,26 +26,38 @@
 
                 $('#add_activity_link').click( () => {
                     $('#main-content').html(`<%- include('add-activity.ejs') %>`);
+                    $('.left-link-item-container').removeClass('active-left-link');
+                    $('#activity_link_container').addClass('active-left-link');
                 });
 
                 $('#add_meal_link').click( () => {
                     $('#main-content').html(`<%- include('add-meal.ejs') %>`);
+                    $('.left-link-item-container').removeClass('active-left-link');
+                    $('#meal_link_container').addClass('active-left-link');
                 });
 
                 $('#check_in_link').click( () => {
                     $('#main-content').html(`<%- include('check-in.ejs') %>`);
+                    $('.left-link-item-container').removeClass('active-left-link');
+                    $('#checkin_link_container').addClass('active-left-link');
                 });
 
                 $('#restaurants_link').click( () => {
                     $('#main-content').html(`<%- include('restaurants.ejs') %>`);
+                    $('.left-link-item-container').removeClass('active-left-link');
+                    $('#restaurants_link_container').addClass('active-left-link');
                 });
 
                 $('#mcgill_resources_link').click( () => {
                     $('#main-content').html(`<%- include('mcgill_resources.ejs') %>`);
+                    $('.left-link-item-container').removeClass('active-left-link');
+                    $('#mcgill_link_container').addClass('active-left-link');
                 });
 
                 $('#health_canada_link').click( () => {
                     $('#main-content').html(`<%- include('health_canada.ejs') %>`);
+                    $('.left-link-item-container').removeClass('active-left-link');
+                    $('#health_link_container').addClass('active-left-link');
                 });
 
 
