@@ -14,7 +14,7 @@ module.exports = class Profile{
         this.activities = []
         this.friends = []
 
-        this.rank ;
+        
 
     }
 
@@ -44,15 +44,11 @@ module.exports = class Profile{
         this.activities.push(act)
     }
     addMeal(meal) {
-        // console.log("meal added")
-        // console.log(meal)
+ 
         this.meals.push(meal)
     }
 
-    setRank(ranking){
-        this.rank = ranking;
-    }
-    
+
 
 }
 
