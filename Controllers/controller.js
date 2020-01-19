@@ -171,8 +171,10 @@ exports.postHome = (req,res,next) => {
     
     
    
-
-    res.redirect('/');
+    setTimeout(() => {
+        res.redirect('/');
+    },500)
+    
     
 
 }
