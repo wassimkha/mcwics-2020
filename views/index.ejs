@@ -62,26 +62,64 @@
                 });
 
                 $('#chart_link').click( () => {
-                var data = [{
-                values: ["<%- percentFood[2] %>", "<%- percentFood[1] %>", "<%- percentFood[0] %>"] ,
-                labels: ['Carbohydrates', 'Lipids', 'Proteins'],
-                type: 'pie'
-                }];
+                    var data = [{
+                    values: ["<%- percentFood[2] %>", "<%- percentFood[1] %>", "<%- percentFood[0] %>"] ,
+                    labels: ['Carbohydrates', 'Lipids', 'Proteins'],
+                    type: 'pie',
+                    marker: {
+                        // colors: ['#669900', '#00cc00', '#00ff00']
+                        colors: ['#a3c2c2', '#758383', '#334d4d']
 
-                var layout = {
-                height: 400,
-                width: 500
-                };
-                
+                    }
+                    }];
 
-                Plotly.newPlot('myDiv', data, layout);
+                    var layout = {
+                    height: 400,
+                    width: 500,
+                    legend: {x: 0, y: -5},
+                    title:'Daily Macronutrient Chart'
+                    };    
+                               
+                    
+                    Plotly.newPlot('foodPercentChart', data, layout);
                 });
 
 
+                $('#chart_link2').click( () => {
+                    var trace1 = {
+                    x: ["MON", "TUES", "WEDS", "THURS", "FRI", "SAT", "SUN"],
+                    y: [10, 15, 13, 17, 20, 21, 50],
+                    type: 'scatter',
+                    name: 'You',
+                    marker: {
+                        color: '#00cc00'
+                    }
+                    };
+
+                    var trace2 = {
+                    x: ["MON", "TUES", "WEDS", "THURS", "FRI", "SAT", "SUN"],
+                    y: [16, 5, 11, 9, 21, 12, 13],
+                    type: 'scatter',
+                    name: 'Your Friends',
+                    marker: {
+                        color: '#334d4d'
+                    }
+                    };
+
+                    var data = [trace1, trace2];
+                    
+                    var layout = {
+                        width: 450,
+                        height: 400,
+                        showlegend: false,
+                        title:'How You Compare to Your Friends'          
+                    };
+
+                    Plotly.newPlot('weeklyChart', data, layout);
+                });
 
             });
-        </script>   
-        <!-- <h1><%= percentFood[0] %></h1>                       -->
+        </script>                   
             
         </div>
 
