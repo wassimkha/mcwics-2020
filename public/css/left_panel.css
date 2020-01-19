@@ -22,3 +22,10 @@
     font-weight: bold;
     color: darkgreen;
 }
+
+.health_score_container {
+    background-color: rgb(235, 235, 235);
+    padding: 2px;
+    margin: 2px;
+    
+}
