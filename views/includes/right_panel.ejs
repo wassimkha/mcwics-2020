@@ -19,6 +19,7 @@
             <div class="row row_username-pic">
               <img class="user_profile-pic"src="<%= user.url %>">
               <h5 class="user_profile-name"><%= user.name %></h5>
+              <h5 class="user_profile-name" style="position: absolute; right: 0; padding-right: 10px;">Health Score: <%= user.rank %></h5>
             </div>         
             <p class="user_profile-latest"><%= user.lastActivity %></p>
           </div>
